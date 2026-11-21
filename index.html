@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="si" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>අභිනව නව වසරේ කිරි ඉතිරවීමේ මංගල්‍යය - 2027</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts for Sinhala & English Elegance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@300;400;500;600;700&family=Noto+Serif+Sinhala:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tone.js for Subtle Ceremonial Chime Sound -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        crimson: {
+                            800: '#6B141A',
+                            900: '#4A0B10',
+                            950: '#2E0508'
+                        },
+                        gold: {
+                            300: '#F5E0A3',
+                            400: '#E6C263',
+                            500: '#D4AF37',
+                            600: '#B59024',
+                            700: '#8C6D14'
+                        },
+                        cream: {
+                            50: '#FFFDF9',
+                            100: '#FDF8EE',
+                            200: '#F7ECD8',
+                            300: '#EFE0C2'
+                        }
+                    },
+                    fontFamily: {
+                        sinhalaSerif: ['"Noto Serif Sinhala"', 'serif'],
+                        sinhalaSans: ['"Noto Sans Sinhala"', 'sans-serif'],
+                        playfair: ['"Playfair Display"', 'serif'],
+                        poppins: ['"Poppins"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Animations & Decorative Styles */
+        body {
+            background-color: #FDF8EE;
+            background-image: radial-gradient(#D4AF37 0.5px, transparent 0.5px), radial-gradient(#D4AF37 0.5px, #FDF8EE 0.5px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+            overflow-x: hidden;
+        }
+
+        .gold-foil-text {
+            background: linear-gradient(135deg, #F5E0A3 0%, #D4AF37 35%, #FFF2CC 50%, #B59024 75%, #E6C263 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #D4AF37 0%, #F3DC94 50%, #B59024 100%);
+        }
+
+        .crimson-royal-bg {
+            background: radial-gradient(circle at top center, #6B141A 0%, #3D070B 70%, #260306 100%);
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { filter: drop-shadow(0 0 8px rgba(255, 200, 60, 0.7)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 18px rgba(255, 220, 100, 1)); transform: scale(1.06); }
+        }
+
+        @keyframes steamRise {
+            0% { transform: translateY(0) scale(0.8); opacity: 0; }
+            40% { opacity: 0.75; }
+            100% { transform: translateY(-28px) scale(1.3); opacity: 0; }
+        }
+
+        @keyframes milkOverflow {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.08); }
+        }
+
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+
+        .flame-active {
+            animation: pulseGlow 1.8s ease-in-out infinite;
+            transform-origin: center bottom;
+        }
+
+        .steam-1 { animation: steamRise 2.8s ease-out infinite; }
+        .steam-2 { animation: steamRise 3.2s ease-out 0.9s infinite; }
+        .steam-3 { animation: steamRise 2.5s ease-out 1.7s infinite; }
+
+        .milk-foam {
+            animation: milkOverflow 2.5s ease-in-out infinite;
+            transform-origin: center top;
+        }
+
+        /* Traditional Ornamental Frame */
+        .ornate-card {
+            box-shadow: 0 20px 50px -12px rgba(74, 11, 16, 0.25), 0 0 0 1px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Envelope Cover Transition */
+        #envelope-overlay {
+            transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #envelope-overlay.opened {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(1.06);
+        }
+
+        /* Fade-up Reveal */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sinhalaSans text-stone-800 antialiased selection:bg-gold-500 selection:text-white">
+
+    <!-- Floating Golden Sparkles Canvas -->
+    <canvas id="sparkle-canvas" class="fixed inset-0 pointer-events-none z-40"></canvas>
+
+    <!-- =====================================================================
+         1. ENVELOPE / CEREMONIAL COVER OVERLAY (Canva-style Interactive Reveal)
+         ===================================================================== -->
+    <div id="envelope-overlay" class="fixed inset-0 z-50 crimson-royal-bg flex flex-col items-center justify-center p-4 sm:p-6 text-center overflow-y-auto">
+        <!-- Decorative Corner SVGs -->
+        <div class="fixed top-4 left-4 w-16 h-16 sm:w-24 sm:h-24 text-gold-500/40 pointer-events-none">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5,95 L5,25 Q5,5 25,5 L95,5" />
+                <path d="M15,85 L15,30 Q15,15 30,15 L85,15" stroke-dasharray="4 4"/>
+                <circle cx="22" cy="22" r="5" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="fixed top-4 right-4 w-16 h-16 sm:w-24 sm:h-24 text-gold-500/40 pointer-events-none rotate-90">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5,95 L5,25 Q5,5 25,5 L95,5" />
+                <path d="M15,85 L15,30 Q15,15 30,15 L85,15" stroke-dasharray="4 4"/>
+                <circle cx="22" cy="22" r="5" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="fixed bottom-4 left-4 w-16 h-16 sm:w-24 sm:h-24 text-gold-500/40 pointer-events-none -rotate-90">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5,95 L5,25 Q5,5 25,5 L95,5" />
+                <path d="M15,85 L15,30 Q15,15 30,15 L85,15" stroke-dasharray="4 4"/>
+                <circle cx="22" cy="22" r="5" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="fixed bottom-4 right-4 w-16 h-16 sm:w-24 sm:h-24 text-gold-500/40 pointer-events-none rotate-180">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5,95 L5,25 Q5,5 25,5 L95,5" />
+                <path d="M15,85 L15,30 Q15,15 30,15 L85,15" stroke-dasharray="4 4"/>
+                <circle cx="22" cy="22" r="5" fill="currentColor"/>
+            </svg>
+        </div>
+
+        <div class="max-w-md w-full bg-crimson-950/70 backdrop-blur-md border-2 border-gold-500/60 rounded-3xl p-6 sm:p-10 shadow-2xl relative">
+            <!-- Sun & Moon Traditional Header Emblem -->
+            <div class="flex items-center justify-center gap-4 mb-4 text-gold-400">
+                <i class="fa-solid fa-sun text-xl animate-spin" style="animation-duration: 20s;"></i>
+                <div class="h-px w-12 bg-gradient-to-r from-transparent via-gold-400 to-transparent"></div>
+                <span class="text-xs font-poppins uppercase tracking-[0.25em] text-gold-300">Auspicious 2027</span>
+                <div class="h-px w-12 bg-gradient-to-r from-transparent via-gold-400 to-transparent"></div>
+                <i class="fa-solid fa-moon text-lg"></i>
+            </div>
+
+            <!-- Traditional Kiri Muttiya (Clay Pot) Illustration -->
+            <div class="w-28 h-28 mx-auto mb-5 animate-float">
+                <svg viewBox="0 0 140 140" class="w-full h-full drop-shadow-[0_8px_16px_rgba(212,175,55,0.35)]">
+                    <!-- Steam -->
+                    <path d="M55 32 Q50 20 58 10" stroke="#FFF8E7" stroke-width="2.5" stroke-linecap="round" fill="none" class="steam-1"/>
+                    <path d="M70 28 Q76 16 68 5" stroke="#FFF8E7" stroke-width="2.5" stroke-linecap="round" fill="none" class="steam-2"/>
+                    <path d="M85 32 Q90 20 82 10" stroke="#FFF8E7" stroke-width="2.5" stroke-linecap="round" fill="none" class="steam-3"/>
+                    <!-- Clay Pot Body -->
+                    <path d="M45 48 C25 60, 22 98, 46 115 C60 123, 80 123, 94 115 C118 98, 115 60, 95 48 Z" fill="url(#potGrad)" stroke="#F5E0A3" stroke-width="1.5"/>
+                    <!-- Decorative Gold Bands on Pot -->
+                    <path d="M32 76 Q70 86 108 76" stroke="#F5E0A3" stroke-width="2" fill="none" stroke-dasharray="3 3"/>
+                    <path d="M31 84 Q70 94 109 84" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+                    <!-- Pot Rim -->
+                    <ellipse cx="70" cy="46" rx="28" ry="7" fill="#7A2812" stroke="#F5E0A3" stroke-width="1.5"/>
+                    <!-- Boiling Overflowing Milk -->
+                    <path d="M43 46 Q52 34 62 40 Q70 32 78 40 Q88 34 97 46 C103 54, 102 68, 97 74 C94 77, 92 64, 88 58 C84 65, 81 78, 77 75 C73 72, 74 58, 70 55 C66 58, 67 72, 63 75 C59 78, 56 65, 52 58 C48 64, 46 77, 43 74 C38 68, 37 54, 43 46 Z" fill="#FFFDF9" class="milk-foam"/>
+                    <!-- Firewood Hearth -->
+                    <rect x="35" y="122" width="70" height="7" rx="3.5" fill="#5C2314" stroke="#D4AF37" stroke-width="1"/>
+                    <path d="M55 122 Q60 108 65 122 Q70 104 75 122 Q80 108 85 122 Z" fill="#FF9E2C"/>
+                    <defs>
+                        <linearGradient id="potGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#C85A32"/>
+                            <stop offset="50%" stop-color="#9E3B1B"/>
+                            <stop offset="100%" stop-color="#5E1D0B"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
+            <p class="text-gold-300 text-sm sm:text-base font-medium mb-1">ගරු කථිකාචාර්යතුමන් / තුමිය වෙත</p>
+            <h1 class="font-sinhalaSerif text-2xl sm:text-3xl font-bold gold-foil-text leading-relaxed pb-2 mb-2">
+                අභිනව නව වසරේ<br>කිරි ඉතිරවීමේ මංගල්‍යය
+            </h1>
+            <p class="text-cream-200/90 text-xs sm:text-sm font-poppins mb-6 tracking-wide">
+                2027 ජනවාරි 01 • විශ්වවිද්‍යාලයීය සුබ මුහුර්තය
+            </p>
+
+            <button onclick="openInvitation()" class="w-full py-3.5 px-6 rounded-2xl gold-gradient-bg text-crimson-950 font-bold text-base sm:text-lg shadow-[0_10px_25px_rgba(212,175,55,0.45)] hover:shadow-[0_14px_30px_rgba(212,175,55,0.65)] active:scale-95 transition-all flex items-center justify-center gap-3 cursor-pointer">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <span>ආරාධනා පත්‍රය විවෘත කරන්න</span>
+            </button>
+            <p class="text-gold-300/60 text-[11px] mt-3 font-poppins">Tap to open your official digital invitation</p>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         MAIN INVITATION WEBPAGE CONTAINER (Mobile-First Canva Layout)
+         ===================================================================== -->
+    <main class="max-w-2xl mx-auto px-3 sm:px-5 pt-4 pb-10">
+        
+        <!-- Single Continuous Ornate Invitation Card Wrapper -->
+        <div class="bg-cream-50 rounded-[2rem] ornate-card overflow-hidden border-2 border-gold-500/50 relative">
+            
+            <!-- TOP HERO BANNER -->
+            <header class="crimson-royal-bg text-center px-5 pt-10 pb-12 sm:px-10 sm:pt-14 sm:pb-16 relative overflow-hidden">
+                <!-- Subtle Traditional Mandala Watermark -->
+                <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full border border-gold-500/15 pointer-events-none"></div>
+                <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full border border-dashed border-gold-500/20 pointer-events-none"></div>
+
+                <!-- University / Faculty Badge -->
+                <div class="inline-flex flex-col items-center gap-0.5 px-5 py-2 rounded-2xl sm:rounded-full bg-gold-500/15 border border-gold-400/40 text-gold-300 text-xs sm:text-sm font-medium mb-5">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-gold-400"></i>
+                        <span id="display-faculty" class="font-bold">කලා අනුකමිටුව - ව්‍යවහාරික විද්‍යා පීඨ ශිෂ්‍ය සංගමය</span>
+                    </div>
+                    <span id="display-university" class="text-[11px] sm:text-xs text-gold-300/85">ශ්‍රී ලංකා සබරගමුව විශ්වවිද්‍යාලය</span>
+                </div>
+
+                <!-- Main Sinhala Title -->
+                <h1 class="font-sinhalaSerif text-3xl sm:text-4xl md:text-5xl font-extrabold gold-foil-text leading-relaxed sm:leading-normal pb-3 mb-2">
+                    අභිනව නව වසරේ<br>කිරි ඉතිරවීමේ මංගල්‍යය
+                </h1>
+                
+                <!-- English Subtitle -->
+                <p class="font-playfair italic text-gold-300/90 text-base sm:text-xl tracking-wide mb-6">
+                    Auspicious New Year Milk Boiling Ceremony • 2027
+                </p>
+
+                <!-- Decorative Gold Divider -->
+                <div class="flex items-center justify-center gap-3 my-4">
+                    <div class="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent to-gold-400"></div>
+                    <svg class="w-6 h-6 text-gold-400" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L14.8 8.8L22 9.3L16.5 14L18.2 21L12 17.3L5.8 21L7.5 14L2 9.3L9.2 8.8L12 2Z"/>
+                    </svg>
+                    <div class="h-[1px] w-16 sm:w-24 bg-gradient-to-l from-transparent to-gold-400"></div>
+                </div>
+
+                <!-- Hero Centerpiece Illustration: Traditional Kiri Ithiraveema Hearth -->
+                <div class="w-44 h-44 sm:w-52 sm:h-52 mx-auto mt-4 relative">
+                    <div class="absolute inset-0 bg-gold-500/20 rounded-full blur-2xl"></div>
+                    <svg viewBox="0 0 200 180" class="w-full h-full relative z-10">
+                        <!-- Radiant Sunburst Rays Behind Pot -->
+                        <circle cx="100" cy="85" r="62" fill="none" stroke="#E6C263" stroke-width="1" stroke-dasharray="4 6" opacity="0.5"/>
+                        
+                        <!-- Rising Steam -->
+                        <path d="M80 42 Q72 25 84 12" stroke="#FFFDF9" stroke-width="3" stroke-linecap="round" fill="none" class="steam-1"/>
+                        <path d="M100 36 Q108 20 98 6" stroke="#FFFDF9" stroke-width="3" stroke-linecap="round" fill="none" class="steam-2"/>
+                        <path d="M120 42 Q128 25 116 12" stroke="#FFFDF9" stroke-width="3" stroke-linecap="round" fill="none" class="steam-3"/>
+
+                        <!-- Clay Pot (Kiri Muttiya) -->
+                        <path d="M68 62 C40 78, 38 128, 70 148 C88 158, 112 158, 130 148 C162 128, 160 78, 132 62 Z" fill="url(#heroPotGrad)" stroke="#F5E0A3" stroke-width="2"/>
+                        
+                        <!-- Traditional Liyawela / Geometric Stripes on Pot -->
+                        <path d="M49 98 Q100 112 151 98" stroke="#F5E0A3" stroke-width="2.5" fill="none"/>
+                        <path d="M48 108 Q100 122 152 108" stroke="#D4AF37" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
+
+                        <!-- Pot Neck & Rim -->
+                        <ellipse cx="100" cy="60" rx="36" ry="9" fill="#6E200D" stroke="#F5E0A3" stroke-width="2"/>
+
+                        <!-- Boiling White Milk Overflowing -->
+                        <path d="M64 60 Q76 42 88 52 Q100 38 112 52 Q124 42 136 60 C145 72, 144 90, 136 98 C132 102, 129 84, 123 76 C118 85, 114 103, 109 99 C104 95, 105 76, 100 72 C95 76, 96 95, 91 99 C86 103, 82 85, 77 76 C71 84, 68 102, 64 98 C56 90, 55 72, 64 60 Z" fill="#FFFFFF" class="milk-foam"/>
+
+                        <!-- Traditional Hearth Stones & Firewood -->
+                        <rect x="45" y="156" width="110" height="10" rx="5" fill="#4A180B" stroke="#D4AF37" stroke-width="1.5"/>
+                        <path d="M75 156 Q83 134 90 156 Q100 126 110 156 Q117 134 125 156 Z" fill="#FF981A"/>
+                        <path d="M85 156 Q92 142 100 156 Q108 142 115 156 Z" fill="#FFE066"/>
+
+                        <!-- Betel Leaves (Bulath) Decorative Accents on Sides -->
+                        <path d="M35 152 Q18 140 24 125 Q38 132 42 150 Z" fill="#2E7D32" stroke="#A5D6A7" stroke-width="1"/>
+                        <path d="M165 152 Q182 140 176 125 Q162 132 158 150 Z" fill="#2E7D32" stroke="#A5D6A7" stroke-width="1"/>
+
+                        <defs>
+                            <linearGradient id="heroPotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#D4653B"/>
+                                <stop offset="50%" stop-color="#9E3918"/>
+                                <stop offset="100%" stop-color="#571908"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <!-- Curved Scalloped Bottom Edge Transition -->
+                <div class="absolute bottom-0 left-0 right-0 h-5 bg-cream-50 rounded-t-[2rem]"></div>
+            </header>
+
+            <!-- =====================================================================
+                 2. FORMAL INVITATION MESSAGE TO LECTURERS
+                 ===================================================================== -->
+            <section class="px-6 sm:px-12 pt-4 pb-8 text-center reveal-section">
+                <div class="inline-block px-4 py-1 rounded-full bg-crimson-900/5 text-crimson-800 font-semibold text-xs sm:text-sm mb-4 border border-crimson-800/15">
+                    ආරාධනා පණිවිඩය • Formal Invitation
+                </div>
+
+                <h2 class="font-sinhalaSerif text-xl sm:text-2xl font-bold text-crimson-900 mb-5">
+                    ගරු කථිකාචාර්යතුමන් / තුමිය වෙත,
+                </h2>
+
+                <div class="space-y-4 text-stone-700 text-sm sm:text-base leading-relaxed font-normal">
+                    <p>
+                        උදාවන්නා වූ <strong class="text-crimson-900 font-semibold">2027 අභිනව නව වසරට</strong> සෙත් පතමින්, අපගේ විශ්වවිද්‍යාලයීය අධ්‍යයන හා අනධ්‍යයන කටයුතු සර්වප්‍රකාරයෙන්ම සාර්ථක වේවායි ප්‍රාර්ථනා කරමින් සංවිධානය කරනු ලබන <strong class="text-crimson-900 font-semibold">ප්‍රථම කිරි ඉතිරවීමේ මංගල්‍යය</strong> සඳහා ඔබතුමන් / තුමිය වෙත ඉතා ගෞරවයෙන් යුතුව ආරාධනා කර සිටිමු.
+                    </p>
+                    <p>
+                        අපගේ ශාස්ත්‍රීය ගමන්මඟට නිරන්තරයෙන් ආලෝකයක් හා මඟපෙන්වීමක් වන ඔබතුමන්ලාගේ අනගි සහභාගීත්වය මෙම සුබ මොහොතේ අසිරිය තවත් ඔප්නංවනු ඇත.
+                    </p>
+                </div>
+
+                <!-- English Translation Box -->
+                <div class="mt-6 p-4 sm:p-5 rounded-2xl bg-cream-200/70 border border-gold-500/30 text-stone-700 font-poppins text-xs sm:text-sm italic leading-relaxed">
+                    "We cordially invite you to grace the auspicious <span class="font-semibold text-crimson-900 not-italic">New Year Milk Boiling Ceremony (Kiri Ithiraveema)</span> as we welcome 2027 with blessings, prosperity, and academic excellence."
+                </div>
+            </section>
+
+            <!-- Decorative Divider -->
+            <div class="flex items-center justify-center gap-3 px-8 my-2">
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-gold-500/50 to-transparent"></div>
+                <span class="text-gold-600 text-sm">❖</span>
+                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-gold-500/50 to-transparent"></div>
+            </div>
+
+            <!-- =====================================================================
+                 3. EVENT DETAILS & LIVE COUNTDOWN TIMER
+                 ===================================================================== -->
+            <section class="px-5 sm:px-10 py-8 reveal-section">
+                <div class="bg-gradient-to-b from-cream-100 to-cream-200/80 border-2 border-gold-500/40 rounded-3xl p-5 sm:p-8 shadow-inner">
+                    <h3 class="font-sinhalaSerif text-center text-lg sm:text-xl font-bold text-crimson-900 mb-6">
+                        සුබ මුහුර්තය සහ උත්සව විස්තර
+                    </h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                        <!-- Date -->
+                        <div class="bg-white/90 rounded-2xl p-4 text-center border border-gold-400/30 shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-crimson-900/10 text-crimson-800 flex items-center justify-center mx-auto mb-2.5">
+                                <i class="fa-regular fa-calendar-check text-lg"></i>
+                            </div>
+                            <p class="text-xs text-stone-500 font-medium mb-1">දිනය (Date)</p>
+                            <p id="display-date" class="font-sinhalaSerif font-bold text-crimson-900 text-base">2027 ජනවාරි 01</p>
+                            <p class="text-[11px] text-stone-500 font-poppins">Friday, Jan 1st</p>
+                        </div>
+
+                        <!-- Auspicious Time -->
+                        <div class="bg-white/90 rounded-2xl p-4 text-center border border-gold-400/30 shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-700 flex items-center justify-center mx-auto mb-2.5">
+                                <i class="fa-regular fa-clock text-lg"></i>
+                            </div>
+                            <p class="text-xs text-stone-500 font-medium mb-1">සුබ වේලාව (Time)</p>
+                            <p id="display-time" class="font-sinhalaSerif font-bold text-crimson-900 text-base">පෙ.ව. 7.30 ට</p>
+                            <p class="text-[11px] text-stone-500 font-poppins">7:30 AM Onwards</p>
+                        </div>
+
+                        <!-- Venue -->
+                        <div class="bg-white/90 rounded-2xl p-4 text-center border border-gold-400/30 shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-crimson-900/10 text-crimson-800 flex items-center justify-center mx-auto mb-2.5">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <p class="text-xs text-stone-500 font-medium mb-1">ස්ථානය (Venue)</p>
+                            <p id="display-venue" class="font-sinhalaSerif font-bold text-crimson-900 text-base leading-snug">ව්‍යවහාරික විද්‍යා පීඨ පරිශ්‍රය</p>
+                            <p id="display-venue-sub" class="text-[11px] text-stone-500 font-poppins mt-0.5">Faculty of Applied Sciences Premises</p>
+                        </div>
+                    </div>
+
+                    <!-- Live Countdown to Jan 1, 2027 07:30 AM -->
+                    <div class="bg-crimson-950 text-cream-50 rounded-2xl p-4 sm:p-5 text-center border border-gold-500/40">
+                        <p class="text-xs text-gold-300 uppercase tracking-widest font-poppins mb-3">
+                            උත්සවයට තව ඉතිරිව ඇති කාලය • Countdown
+                        </p>
+                        <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-sm mx-auto font-poppins">
+                            <div class="bg-crimson-900/80 rounded-xl py-2.5 px-1 border border-gold-500/25">
+                                <span id="cd-days" class="block text-xl sm:text-2xl font-bold text-gold-400">00</span>
+                                <span class="text-[10px] sm:text-xs text-cream-200/80">දින / Days</span>
+                            </div>
+                            <div class="bg-crimson-900/80 rounded-xl py-2.5 px-1 border border-gold-500/25">
+                                <span id="cd-hours" class="block text-xl sm:text-2xl font-bold text-gold-400">00</span>
+                                <span class="text-[10px] sm:text-xs text-cream-200/80">පැය / Hrs</span>
+                            </div>
+                            <div class="bg-crimson-900/80 rounded-xl py-2.5 px-1 border border-gold-500/25">
+                                <span id="cd-mins" class="block text-xl sm:text-2xl font-bold text-gold-400">00</span>
+                                <span class="text-[10px] sm:text-xs text-cream-200/80">මිනි / Mins</span>
+                            </div>
+                            <div class="bg-crimson-900/80 rounded-xl py-2.5 px-1 border border-gold-500/25">
+                                <span id="cd-secs" class="block text-xl sm:text-2xl font-bold text-gold-400">00</span>
+                                <span class="text-[10px] sm:text-xs text-cream-200/80">තත් / Secs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =====================================================================
+                 4. INTERACTIVE "LIGHT THE TRADITIONAL OIL LAMP" & BLESSINGS
+                 ===================================================================== -->
+            <section class="px-5 sm:px-10 py-6 reveal-section">
+                <div class="bg-crimson-900 text-cream-50 rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden border border-gold-500/50 shadow-lg">
+                    <h3 class="font-sinhalaSerif text-xl sm:text-2xl font-bold text-gold-300 mb-2">
+                        මංගල පහන දල්වා ආශීර්වාද එක් කරන්න
+                    </h3>
+                    <p class="text-cream-200/85 text-xs sm:text-sm mb-5 max-w-md mx-auto">
+                        පහත පහන මත ස්පර්ශ කර නව වසර වෙනුවෙන් ඔබගේ ගෞරවනීය ආශීර්වාදය එක් කරන්න.
+                    </p>
+
+                    <!-- Interactive Traditional Brass Oil Lamp (Pahana) -->
+                    <div class="flex flex-col items-center justify-center my-2">
+                        <button id="lamp-button" onclick="toggleOilLamp()" aria-label="Light the oil lamp" class="group relative w-36 h-44 flex items-center justify-center cursor-pointer focus:outline-none">
+                            <!-- Ambient Glow Behind Lamp -->
+                            <div id="lamp-aura" class="absolute inset-2 rounded-full bg-amber-400/0 transition-all duration-700 blur-xl"></div>
+                            
+                            <svg viewBox="0 0 160 200" class="w-full h-full relative z-10">
+                                <!-- Flame (Hidden initially, glows when lit) -->
+                                <g id="lamp-flame" class="opacity-20 transition-opacity duration-500">
+                                    <path d="M80 18 C72 34, 68 46, 80 54 C92 46, 88 34, 80 18 Z" fill="#FF9800"/>
+                                    <path d="M80 26 C75 37, 73 45, 80 51 C87 45, 85 37, 80 26 Z" fill="#FFF59D"/>
+                                </g>
+                                
+                                <!-- Wick -->
+                                <path d="M80 52 L80 62" stroke="#3E2723" stroke-width="3" stroke-linecap="round"/>
+
+                                <!-- Top Finial (Kotha) -->
+                                <path d="M80 56 L74 68 L86 68 Z" fill="url(#brassGrad)"/>
+                                
+                                <!-- Oil Bowl (Thel Thattiya) -->
+                                <path d="M42 74 Q80 66 118 74 L108 92 Q80 98 52 92 Z" fill="url(#brassGrad)" stroke="#FFF2CC" stroke-width="1"/>
+                                
+                                <!-- Decorative Stem -->
+                                <rect x="74" y="92" width="12" height="18" fill="url(#brassGrad)"/>
+                                <ellipse cx="80" cy="114" rx="16" ry="5" fill="url(#brassGrad)"/>
+                                <rect x="73" y="118" width="14" height="32" fill="url(#brassGrad)"/>
+                                <ellipse cx="80" cy="152" rx="18" ry="6" fill="url(#brassGrad)"/>
+                                <path d="M68 156 L62 174 L98 174 L92 156 Z" fill="url(#brassGrad)"/>
+
+                                <!-- Pedestal Base -->
+                                <ellipse cx="80" cy="178" rx="38" ry="8" fill="url(#brassGrad)" stroke="#FFF2CC" stroke-width="1"/>
+                                <ellipse cx="80" cy="183" rx="44" ry="8" fill="#8C6D14"/>
+
+                                <defs>
+                                    <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#B59024"/>
+                                        <stop offset="45%" stop-color="#F5E0A3"/>
+                                        <stop offset="100%" stop-color="#8C6D14"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </button>
+
+                        <span id="lamp-status-text" class="mt-2 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500 text-crimson-950 font-bold text-xs sm:text-sm shadow-md transition-all">
+                            <i class="fa-solid fa-hand-pointer"></i>
+                            <span>පහන දල්වන්න (Tap to Light)</span>
+                        </span>
+                    </div>
+
+                    <!-- Blessing / RSVP Quick Note Box -->
+                    <div class="mt-6 pt-5 border-t border-gold-500/25 max-w-md mx-auto">
+                        <form id="blessing-form" onsubmit="addBlessing(event)" class="flex flex-col sm:flex-row gap-2">
+                            <input type="text" id="lecturer-name" placeholder="ඔබගේ නම (උදා: ආචාර්ය/මහාචාර්ය...)" required
+                                class="flex-1 px-4 py-2.5 rounded-xl bg-crimson-950/90 border border-gold-500/40 text-cream-50 placeholder-cream-200/50 text-xs sm:text-sm focus:outline-none focus:border-gold-400">
+                            <button type="submit" class="px-5 py-2.5 rounded-xl gold-gradient-bg text-crimson-950 font-bold text-xs sm:text-sm hover:opacity-95 active:scale-95 transition-all cursor-pointer whitespace-nowrap">
+                                උත්සවය සඳහා සහභාගී වීමට
+                            </button>
+                        </form>
+
+                        <!-- Display Added Blessings -->
+                        <div id="blessings-list" class="mt-4 space-y-2 text-left max-h-36 overflow-y-auto pr-1">
+                            <div class="bg-crimson-950/60 border border-gold-500/20 rounded-xl px-3.5 py-2 text-xs flex items-center justify-between">
+                                <span class="text-gold-300 font-medium"><i class="fa-solid fa-sparkles mr-1.5"></i>සංවිධායක මණ්ඩලය</span>
+                                <span class="text-cream-200/80">සැමට සුබ නව වසරක් වේවා!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =====================================================================
+                 5. FOOTER & ORGANIZING COMMITTEE SIGNATURE
+                 ===================================================================== -->
+            <footer class="px-6 sm:px-12 pt-4 pb-10 text-center reveal-section">
+                <p class="text-stone-600 text-xs sm:text-sm mb-2">
+                    කිරි ඉතිරවීමේ මංගල සිරි සමඟින් අලුත් අවුරුද්ද අර්ථවත් කරගන්න අප හා එක්වන ලෙස ආදරයෙන් ඇරයුම් කරන්නෙමු!
+                </p>
+                
+                <div class="mt-5 pt-5 border-t border-gold-500/30">
+                    <p class="text-xs text-stone-500 uppercase tracking-wider font-poppins mb-1">මෙයට ගෞරවපූර්වකව,</p>
+                    <p id="display-organizer" class="font-sinhalaSerif text-base sm:text-lg font-bold text-crimson-900">
+                        කලා අනුකමිටුව - ව්‍යවහාරික විද්‍යා පීඨ ශිෂ්‍ය සංගමය
+                    </p>
+                    <p id="display-organizer-uni" class="font-sinhalaSans text-xs sm:text-sm font-semibold text-crimson-800 mt-0.5">
+                        ශ්‍රී ලංකා සබරගමුව විශ්වවිද්‍යාලය
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Custom Toast Notification (No alert() used) -->
+    <div id="toast-box" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300 transform -translate-y-4">
+        <div class="bg-crimson-950 text-gold-300 border border-gold-500 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-2.5 text-xs sm:text-sm font-medium">
+            <i class="fa-solid fa-circle-check text-gold-400"></i>
+            <span id="toast-message">සුබ නව වසරක් වේවා!</span>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         JAVASCRIPT LOGIC
+         ===================================================================== -->
+    <script>
+        // 1. Open Envelope Overlay & Play Firework Sound + Visual Burst
+        function openInvitation() {
+            const overlay = document.getElementById('envelope-overlay');
+            overlay.classList.add('opened');
+            playFireworkSound();
+            launchFireworksVisual();
+            triggerRevealAnimations();
+        }
+
+        // Realistic Firework Launch & Crackle Burst Sound via Tone.js
+        function playFireworkSound() {
+            try {
+                if (typeof Tone !== 'undefined') {
+                    Tone.start();
+                    const now = Tone.now();
+
+                    // 1. First Firework Shell Launch & Burst
+                    const boom1 = new Tone.MembraneSynth({
+                        pitchDecay: 0.08,
+                        octaves: 6,
+                        envelope: { attack: 0.005, decay: 0.8, sustain: 0, release: 0.4 }
+                    }).toDestination();
+                    boom1.volume.value = -5;
+                    boom1.triggerAttackRelease("C2", "2n", now);
+
+                    // Filtered Crackle Noise for Realistic Firework Sparkles
+                    const filter1 = new Tone.Filter(1800, "bandpass").toDestination();
+                    const crackle1 = new Tone.NoiseSynth({
+                        noise: { type: "white" },
+                        envelope: { attack: 0.01, decay: 0.45, sustain: 0, release: 0.35 }
+                    }).connect(filter1);
+                    crackle1.volume.value = -8;
+                    crackle1.triggerAttackRelease("4n", now + 0.05);
+                    crackle1.triggerAttackRelease("8n", now + 0.22);
+                    crackle1.triggerAttackRelease("16n", now + 0.38);
+
+                    // 2. Second Delayed Firework Burst
+                    const boom2 = new Tone.MembraneSynth({
+                        pitchDecay: 0.09,
+                        octaves: 5,
+                        envelope: { attack: 0.005, decay: 0.9, sustain: 0, release: 0.5 }
+                    }).toDestination();
+                    boom2.volume.value = -7;
+                    boom2.triggerAttackRelease("G1", "2n", now + 0.45);
+
+                    const crackle2 = new Tone.NoiseSynth({
+                        noise: { type: "pink" },
+                        envelope: { attack: 0.01, decay: 0.6, sustain: 0, release: 0.4 }
+                    }).toDestination();
+                    crackle2.volume.value = -10;
+                    crackle2.triggerAttackRelease("4n", now + 0.5);
+                    crackle2.triggerAttackRelease("8n", now + 0.7);
+                    crackle2.triggerAttackRelease("16n", now + 0.88);
+                }
+            } catch (e) {
+                // Fail silently if audio blocked
+            }
+        }
+
+        // 2. Interactive Traditional Oil Lamp Toggle
+        let lampLit = false;
+        function toggleOilLamp() {
+            lampLit = !lampLit;
+            const flame = document.getElementById('lamp-flame');
+            const aura = document.getElementById('lamp-aura');
+            const statusText = document.getElementById('lamp-status-text');
+
+            if (lampLit) {
+                flame.classList.remove('opacity-20');
+                flame.classList.add('opacity-100', 'flame-active');
+                aura.classList.remove('bg-amber-400/0');
+                aura.classList.add('bg-amber-400/35');
+                statusText.innerHTML = '<span>✨ සුබ නව වසරක් වේවා!</span>';
+                playFireworkSound();
+                launchFireworksVisual();
+                showToast('සුබ නව වසරක් වේවා!');
+            } else {
+                flame.classList.add('opacity-20');
+                flame.classList.remove('opacity-100', 'flame-active');
+                aura.classList.add('bg-amber-400/0');
+                aura.classList.remove('bg-amber-400/35');
+                statusText.innerHTML = '<i class="fa-solid fa-hand-pointer"></i><span>පහන දල්වන්න (Tap to Light)</span>';
+            }
+        }
+
+        // 3. Add Lecturer Blessing / Attendance Note
+        function addBlessing(event) {
+            event.preventDefault();
+            const nameInput = document.getElementById('lecturer-name');
+            const name = nameInput.value.trim();
+            if (!name) return;
+
+            const list = document.getElementById('blessings-list');
+            const item = document.createElement('div');
+            item.className = 'bg-crimson-950/80 border border-gold-400/40 rounded-xl px-3.5 py-2 text-xs flex items-center justify-between animate-fadeIn';
+            item.innerHTML = `
+                <span class="text-gold-300 font-semibold"><i class="fa-solid fa-fire-flame-curved text-amber-400 mr-1.5"></i>${escapeHtml(name)}</span>
+                <span class="text-cream-100">සහභාගීත්වය තහවුරු කළා ✨</span>
+            `;
+            list.prepend(item);
+            nameInput.value = '';
+            
+            if (!lampLit) toggleOilLamp();
+            showToast('උත්සවය සඳහා ඔබගේ සහභාගීත්වය තහවුරු කරන ලදී!');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // 4. Live Countdown Timer to January 1, 2027 07:30 AM
+        function updateCountdown() {
+            const targetDate = new Date('January 1, 2027 07:30:00').getTime();
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('cd-days').innerText = '00';
+                document.getElementById('cd-hours').innerText = '00';
+                document.getElementById('cd-mins').innerText = '00';
+                document.getElementById('cd-secs').innerText = '00';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('cd-days').innerText = String(days).padStart(2, '0');
+            document.getElementById('cd-hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('cd-mins').innerText = String(mins).padStart(2, '0');
+            document.getElementById('cd-secs').innerText = String(secs).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 5. Custom Toast Notification Helper
+        let toastTimeout;
+        function showToast(message) {
+            const toastBox = document.getElementById('toast-box');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.innerText = message;
+            toastBox.classList.remove('opacity-0', '-translate-y-4');
+            toastBox.classList.add('opacity-100', 'translate-y-0');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toastBox.classList.remove('opacity-100', 'translate-y-0');
+                toastBox.classList.add('opacity-0', '-translate-y-4');
+            }, 3200);
+        }
+
+        // 6. Scroll & Load Reveal Animation
+        function triggerRevealAnimations() {
+            const sections = document.querySelectorAll('.reveal-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(sec => observer.observe(sec));
+        }
+
+        // 7. Floating Golden Sparkles & Firework Burst Canvas Animation
+        const canvas = document.getElementById('sparkle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let fireworkSparks = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function launchFireworksVisual() {
+            const colors = ['#FFD700', '#FF6B35', '#FFF2CC', '#FF9F1C', '#F5E0A3'];
+            const origins = [
+                { x: canvas.width * 0.3, y: canvas.height * 0.35 },
+                { x: canvas.width * 0.7, y: canvas.height * 0.3 },
+                { x: canvas.width * 0.5, y: canvas.height * 0.25 }
+            ];
+            origins.forEach((origin, idx) => {
+                setTimeout(() => {
+                    for (let i = 0; i < 45; i++) {
+                        const angle = (Math.PI * 2 * i) / 45 + (Math.random() * 0.2);
+                        const speed = Math.random() * 4.5 + 1.5;
+                        fireworkSparks.push({
+                            x: origin.x,
+                            y: origin.y,
+                            vx: Math.cos(angle) * speed,
+                            vy: Math.sin(angle) * speed,
+                            radius: Math.random() * 2.5 + 1,
+                            color: colors[Math.floor(Math.random() * colors.length)],
+                            alpha: 1,
+                            decay: Math.random() * 0.018 + 0.012
+                        });
+                    }
+                }, idx * 250);
+            });
+        }
+
+        function initParticles() {
+            particles = [];
+            const count = Math.min(35, Math.floor(window.innerWidth / 25));
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 2.2 + 0.8,
+                    speedY: Math.random() * 0.4 + 0.15,
+                    speedX: (Math.random() - 0.5) * 0.3,
+                    alpha: Math.random() * 0.6 + 0.2
+                });
+            }
+        }
+
+        function animateSparkles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.y -= p.speedY;
+                p.x += p.speedX;
+                if (p.y < -10) {
+                    p.y = canvas.height + 10;
+                    p.x = Math.random() * canvas.width;
+                }
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(212, 175, 55, ${p.alpha})`;
+                ctx.fill();
+            });
+
+            // Animate Firework Sparks
+            for (let i = fireworkSparks.length - 1; i >= 0; i--) {
+                const s = fireworkSparks[i];
+                s.x += s.vx;
+                s.y += s.vy;
+                s.vy += 0.05; // slight gravity
+                s.alpha -= s.decay;
+                if (s.alpha <= 0) {
+                    fireworkSparks.splice(i, 1);
+                    continue;
+                }
+                ctx.save();
+                ctx.globalAlpha = s.alpha;
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+                ctx.fillStyle = s.color;
+                ctx.fill();
+                ctx.restore();
+            }
+
+            requestAnimationFrame(animateSparkles);
+        }
+
+        window.onload = function() {
+            initParticles();
+            animateSparkles();
+            triggerRevealAnimations();
+        };
+    </script>
+</body>
+</html>
